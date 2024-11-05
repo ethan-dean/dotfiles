@@ -1,6 +1,9 @@
 # Don't save all tmux plugins
 tmux/plugins
 
-# Ignore .git directories in sub-folders 
-**/.git
+# Ignore configs I don't want to delete
+configstore
+iterm2
+wireshark
 
+.DS_Store
