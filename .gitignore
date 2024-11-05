@@ -1,0 +1,6 @@
+# Don't save all tmux plugins
+tmux/plugins
+
+# Ignore .git directories in sub-folders 
+**/.git
+

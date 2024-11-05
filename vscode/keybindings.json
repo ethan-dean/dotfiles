@@ -1,0 +1,299 @@
+[
+  /////////////////////////////////////////////////////////////////////////
+  // Multi-cursor
+  /////////////////////////////////////////////////////////////////////////
+  {
+    "key": "shift+alt+cmd+down",
+    "command": "-cursorColumnSelectDown",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+cmd+down",
+    "command": "workbench.action.toggleMultiCursorModifier"
+  },
+  /////////////////////////////////////////////////////////////////////////
+  // Commenting out lines/blocks
+  /////////////////////////////////////////////////////////////////////////
+  {
+    "key": "ctrl+/",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && (vim.mode == 'Normal' || vim.mode == 'Visual')"
+  },
+  /////////////////////////////////////////////////////////////////////////
+  // Search (filegrep/<leader>fg) (may cause problems with <C-j>)
+  // Periscope extension is a direct telescope replacement but is slow
+  /////////////////////////////////////////////////////////////////////////
+  // TODO: Maybe make extension so we don't have to open preview to side
+  {
+    "key": "ctrl+j",
+    "command": "runCommands",
+    "when": "searchViewletFocus && searchInputBoxFocus",
+    "args": {
+      "commands": [
+        "search.action.focusSearchList",
+      ],
+    }
+  },
+  {
+    "key": "ctrl+k",
+    "command": "runCommands",
+    "when": "searchViewletFocus && searchInputBoxFocus",
+    "args": {
+      "commands": [
+        "search.action.focusSearchList",
+      ],
+    }
+  },
+  // TODO: Add "ctrl+r" to focus the replace box
+  {
+    "key": "ctrl+f",
+    "command": "workbench.action.findInFiles",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "runCommands",
+    "when": "searchViewletFocus",
+    "args": {
+      "commands": [
+        "workbench.action.closeEditorsInGroup",
+        "workbench.action.focusActiveEditorGroup"
+      ]
+    }
+  },
+  {
+    "key": "ctrl+c",
+    "command": "runCommands",
+    "when": "searchViewletFocus",
+    "args": {
+      "commands": [
+        "workbench.action.closeEditorsInGroup",
+        "workbench.action.toggleSidebarVisibility"
+      ]
+    }
+  },
+  {
+    "key": "Enter",
+    "command": "runCommands",
+    "when": "fileMatchOrMatchFocus && searchViewletVisible",
+    "args": {
+      "commands": [ 
+        "search.action.openResult",
+        "workbench.action.joinTwoGroups"
+       ]
+    }
+  },
+  /////////////////////////////////////////////////////////////////////////
+  // Fold and unfold all code with <C-Shift-k> and <C-Shift-j>
+  /////////////////////////////////////////////////////////////////////////
+  {
+  "key": "ctrl+shift+k",
+  "command": "editor.foldAll",
+  "when": "editorTextFocus && foldingEnabled"
+  },
+  {
+  "key": "ctrl+shift+j",
+  "command": "editor.unfoldAll",
+  "when": "editorTextFocus && foldingEnabled"
+  },
+  /////////////////////////////////////////////////////////////////////////
+  // Quick Open Menu
+  /////////////////////////////////////////////////////////////////////////
+  {
+  "key": "ctrl+c",
+  "command": "workbench.action.focusActiveEditorGroup",
+  "when": "!editorFocus && inQuickInput"
+  },
+  /////////////////////////////////////////////////////////////////////////
+  // File Explorer
+  /////////////////////////////////////////////////////////////////////////
+  {
+    "key": "ctrl+e",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!editorFocus && filesExplorerFocus"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "!editorFocus && filesExplorerFocus",
+  },
+  {
+    "key": "Enter",
+    "command": "list.toggleExpand",
+    "when": "filesExplorerFocus && listFocus && !inputFocus",
+  }, 
+  {
+    "key": "Enter",
+    "command": "explorer.openAndPassFocus",
+    "when": "explorerViewletVisible && !explorerResourceIsFolder && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus",
+  },
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+  },
+  {
+    "key": "shift+a",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+  },
+  {
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+  },
+  {
+    "key": "x",
+    "command": "filesExplorer.cut",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+  },
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "c",
+    "command": "workbench.files.action.collapseExplorerFolders",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "s",
+    "command": "explorer.openToSide",
+    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+  },
+  {
+    "key": "f",
+    "command": "revealFileInOS",
+    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+  },
+  {
+    "key": "t",
+    "command": "openInTerminal",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+  },
+  /////////////////////////////////////////////////////////////////////////
+  // Terminal
+  /////////////////////////////////////////////////////////////////////////
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "workbench.action.togglePanel",
+    "when": "terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.terminal.scrollDown",
+    "when": "terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.terminal.scrollUp",
+    "when": "terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.terminal.scrollDownPage",
+    "when": "terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.terminal.scrollUpPage",
+    "when": "terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+shift+n",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+k",
+    "when": "listFocus && editorFocus",
+    "command": "list.focusUp"
+  },
+  /////////////////////////////////////////////////////////////////////////
+  // Up and Down Motion
+  /////////////////////////////////////////////////////////////////////////
+  {
+    "key": "ctrl+j",
+    "command": "showNextParameterHint",
+    "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "list.focusDown",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "showPrevParameterHint",
+    "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "list.focusUp",
+    "when": "listFocus && !inputFocus"
+  },
+  // {
+  //   "key": "ctrl+j",
+  //   "command": "cursorDown",
+  //   "when": "textInputFocus"
+  // },
+  // {
+  //   "key": "ctrl+k",
+  //   "command": "cursorUp",
+  //   "when": "textInputFocus"
+  // },
+  /////////////////////////////////////////////////////////////////////////
+  // Removed keybinds...
+  /////////////////////////////////////////////////////////////////////////
+  {
+    "key": "ctrl+k",
+    "command": "-deleteAllRight",
+    "when": "textInputFocus && !editorReadonly"
+  },
+]
