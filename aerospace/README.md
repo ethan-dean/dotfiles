@@ -12,7 +12,9 @@ aerospace reload-config
 | Action           | Keys           |
 | ---------------- | -------------- |
 | Hide Window | cmd-h |
-| Layout tiles H/V | alt-/ |
+| Recent Window | cmd-tab |
+| Layout Tiles H/V | alt-/ |
+| Layout Accordion | alt-, |
 | Focus Right | alt-l |
 | Focus Down | alt-j |
 | Focus Left | alt-h |
