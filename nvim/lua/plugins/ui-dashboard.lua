@@ -73,7 +73,12 @@ return {
       disable_move = true,    --  default is false disable move keymap for hyper
       shortcut_type = 'letter',   --  shorcut type 'letter' or 'number'
       shuffle_letter = false, --  default is true, shortcut 'letter' will be randomize, set to false to have ordered letter.
-      change_to_vcs_root = true, -- default is false,for open file in hyper mru. it will change to the root of vcs
+      hide = {
+        statusline,    -- hide statusline default is true
+        tabline,       -- hide the tabline
+        winbar,        -- hide winbar
+      },
+      change_to_vcs_root = false, -- default is false,for open file in hyper mru. it will change to the root of vcs
       config = {
         header = {
               "                                                       ",
@@ -113,17 +118,28 @@ return {
             action = 'Telescope live_grep',
             key = 'g',
           },
+          -- {
+          --   desc = ' Nvim Config',
+          --   group = 'Number',
+          --   action = ':e ~/.config/nvim/',
+          --   key = 'i',
+          -- },
+          -- {
+          --   desc = ' Dotfiles',
+          --   group = '@property',
+          --   action = function()
+          --       local cmd = 'edit ' .. vim.fn.expand('~/.config')
+          --       print(cmd)
+          --       vim.cmd(cmd)
+          --   end,
+          --   -- action = 'e /home/ethan/.config/',
+          --   key = 'd',
+          -- },
           {
-            desc = ' Nvim Config',
+            desc = '󰗼 Quit Nvim',
             group = 'Number',
-            action = ':e ~/.config/nvim/',
-            key = 'i',
-          },
-          {
-            desc = ' Dotfiles',
-            group = '@property',
-            action = ':e ~/.config/',
-            key = 'd',
+            action = 'qa',
+            key = 'q',
           },
         },
         packages = { enable = true }, -- show how many plugins neovim loaded

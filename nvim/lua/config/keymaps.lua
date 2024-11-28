@@ -1,5 +1,9 @@
 local mapkey = require("util.func-keymap").mapvimkey
 
+-- Step between k/j and <C-U>/<C-D> for motions
+vim.api.nvim_set_keymap("n", "J", "5j", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "K", "5k", {noremap = true, silent = true})
+
 -- Buffer Navigation
 mapkey("<leader>b", "e #", "n") -- Switch to Other Buffer
 
@@ -16,10 +20,10 @@ vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", {noremap = true, silent=true})
 -- Window Management
 mapkey("<leader>sv", "vsplit", "n") -- Split Vertically
 mapkey("<leader>sh", "split", "n") -- Split Horizontally
+mapkey("<leader>si", "vertical resize +5")
+mapkey("<leader>sd", "vertical resize -5")
 mapkey("<C-Up>", "resize +2", "n")
 mapkey("<C-Down>", "resize -2", "n")
-mapkey("<C-Left>", "vertical resize +2", "n")
-mapkey("<C-Right>", "vertical resize -2", "n")
 
 -- Commenting
 vim.api.nvim_set_keymap("n", "<C-/>", "gcc", { noremap = true }) -- Comment block in visual mode
@@ -40,3 +44,7 @@ mapkey("<leader>dc", "DiffviewClose", "n")
 
 -- Procrastination
 mapkey("<leader>fml", "CellularAutomaton make_it_rain", "n")
+
+-- Unbinds
+-- History (tags related)?
+vim.api.nvim_set_keymap('!', '<C-H>', '<Nop>', { noremap = true, silent = true })

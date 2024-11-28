@@ -40,10 +40,10 @@ return {
         -- group_index = number : lower number is higher priority for whole source
         -- max_item_count = number: max_words appearing from source
 				-- ex) { name = "nvim_lsp", group_index = 1, max_item_count = 3 }, -- lsp
-				{ name = "nvim_lsp" }, -- lsp
-				{ name = "buffer" }, -- text within current buffer
-				{ name = "luasnip" }, -- snippets
-				{ name = "path" }, -- file system paths
+				{ name = "nvim_lsp", group_index = 1 }, -- lsp
+				{ name = "buffer", group_index = 1 }, -- text within current buffer
+				{ name = "luasnip", group_index = 2 }, -- snippets
+				{ name = "path", group_index = 1 }, -- file system paths
 			}),
 			-- configure lspkind for vs-code like icons
 			formatting = {

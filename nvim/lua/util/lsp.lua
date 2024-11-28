@@ -10,7 +10,7 @@ M.on_attach = function(client, bufnr)
 	mapkey("<leader>gd", "Lspsaga goto_definition", "n", opts) -- go to definition
 	mapkey("<leader>gD", "Lspsaga peek_definition", "n", opts) -- peek definition
 	mapkey("<leader>gs", "vsplit | Lspsaga goto_definition", "n", opts) -- split and go to definition
-	-- mapkey("<leader>ca", "Lspsaga code_action", "n", opts) -- see available code actions
+	mapkey("<leader>gc", "Lspsaga code_action", "n", opts) -- see available code actions
 	-- mapkey("<leader>rn", "Lspsaga rename", "n", opts) -- smart rename
 	-- mapkey("<leader>D", "Lspsaga show_line_diagnostics", "n", opts) -- show diagnostics for line
 	-- mapkey("<leader>d", "Lspsaga show_cursor_diagnostics", "n", opts) -- show diagnostics for cursor

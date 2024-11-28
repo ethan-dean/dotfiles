@@ -20,7 +20,7 @@ opt.relativenumber = true
 opt.termguicolors = true
 opt.colorcolumn = "100" -- Line at 100 characters to show length
 opt.signcolumn = "yes" -- Debug icons column on left
-opt.cmdheight = 1 -- Command line at bottom ?
+opt.cmdheight = 1 -- Command line at bottom
 opt.scrolloff = 10 -- Won't scroll past 10 lines at bottom
 opt.completeopt = "menuone,noinsert,noselect" -- Options for autocomplete menu
 
@@ -45,15 +45,16 @@ opt.encoding = "UTF-8" -- Current buffer is in UTF-8
 -- Auto-Complete
 opt.pumheight = 10 -- Limit list size of completion items
 
--- Vim Command line height
-opt.cmdheight = 0
+-- Undo levels each 1000 can take ~10 ms to open buffer
+vim.o.undolevels=1000
+
+-- Time it takes to activate "CursorHold" in ms
+vim.o.updatetime=500
 
 -- Tmux term settings
 -- opt.term=xterm
 
--- LSP Diagnostics
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = false
-    }
-)
+-- Turn off virtual text, use popup from autocmd instead
+vim.diagnostic.config({
+  virtual_text=false,
+})

@@ -16,9 +16,6 @@ return {
       symbol_in_winbar = {
         enable = false,
       },
-      diagnostic = {
-        diagnostic_only_current = true,
-      },
       lightbulbs = {
         enable = false,
       }
