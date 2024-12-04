@@ -17,6 +17,7 @@
     - nodejs
     - npm
     - build-essential (gcc/g++/make)
+    - lua, luajit 
 3) Zsh
     - Verify zsh installation
     ```bash
