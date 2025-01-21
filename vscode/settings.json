@@ -269,5 +269,6 @@
         },
     ],
     "git.openRepositoryInParentFolders": "never",
+    "redhat.telemetry.enabled": false,
     // END OF VSCODE VIM SETUP
 } 
