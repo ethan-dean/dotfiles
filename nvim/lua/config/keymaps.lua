@@ -3,6 +3,8 @@ local mapkey = require("util.func-keymap").mapvimkey
 -- Step between k/j and <C-U>/<C-D> for motions
 vim.api.nvim_set_keymap("n", "J", "5j", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "K", "5k", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("v", "J", "5j", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("v", "K", "5k", {noremap = true, silent = true})
 
 -- Buffer Navigation
 mapkey("<leader>b", "e #", "n") -- Switch to Other Buffer

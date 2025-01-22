@@ -72,7 +72,10 @@ local config = function()
 			"typescript",
       "typescriptreact",
 		},
-		root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
+    root_dir = function(fname)
+      local root = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git")(fname)
+      return root or vim.fn.getcwd()
+    end,
 	})
 
 	-- bash
