@@ -31,9 +31,13 @@ return {
 				["<C-b>"] = cmp.mapping.scroll_docs(-4),
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.confirm({ select = true }), -- show completion suggestions
+				-- ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
 				["<C-e>"] = cmp.mapping.abort(), -- close completion window
 				["<CR>"] = cmp.mapping.confirm({ select = false }),
 			}),
+      completion = {
+        -- autocomplete = true,
+      },
 			-- sources for autocompletion
 			sources = cmp.config.sources({
         -- ":h nvim-cmp" for options to improve which sources show up

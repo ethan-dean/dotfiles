@@ -7,6 +7,11 @@
         "${workspaceFolder}/**"
     ],
 
+    // Java settings
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ],
+
     // General VSCode App Settings
     "update.showReleaseNotes": false,
     "files.autoSave": "afterDelay",
@@ -270,5 +275,6 @@
     ],
     "git.openRepositoryInParentFolders": "never",
     "redhat.telemetry.enabled": false,
+    "github.copilot.nextEditSuggestions.enabled": true,
     // END OF VSCODE VIM SETUP
 } 
