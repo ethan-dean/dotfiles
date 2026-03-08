@@ -9,6 +9,11 @@ if [[ ":$PATH:" != *":/opt/homebrew/anaconda3/bin/"* ]]; then
     export PATH="/opt/homebrew/anaconda3/bin/:$PATH"
 fi
 
+# Path to claude installation
+if [[ ":$PATH:" != *":$HOME/.local/bin"* ]]; then
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+
 # Conda initialize 
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/opt/homebrew/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"

@@ -276,5 +276,7 @@
     "git.openRepositoryInParentFolders": "never",
     "redhat.telemetry.enabled": false,
     "github.copilot.nextEditSuggestions.enabled": true,
+    "jdk.telemetry.enabled": false,
+    "dart.flutterSdkPath": "/Users/ethan/flutter",
     // END OF VSCODE VIM SETUP
 } 

@@ -24,22 +24,3 @@ alias q="exit"
 alias editaliases="nvim ~/.config/zsh/aliases.zsh"
 alias editnvim="nvim ~/.config/nvim"
 alias reloadsh="source ~/.zshrc"
-
-# Quick SSH Aliases
-alias large="ssh root@137.184.138.139"
-alias rlarge="ssh root@typecode.app 'bash /root/services/script.sh &'"
-alias newton="echo 'passphrase = newton 863'; ssh cap5415.student25@newton.ist.ucf.edu" # passphrase = "newton 863"
-alias cruise="ssh ubuntu@54.86.138.46"
-alias personal="ssh root@104.131.176.242"
-alias personaldb="ssh root@104.131.179.3"
-
-# Temporary Aliases
-alias cc-restart="cd ~/Downloads/Web/cruise-connect/frontend && npm run build && cd ../ && rm -rf backend/frontendDist &&  mkdir backend/frontendDist && cp -r frontend/dist/* backend/frontendDist && cd backend && tsc && node dist/index.js"
-alias tom-restart="/opt/homebrew/Cellar/tomcat/11.0.6/libexec/bin/shutdown.sh && \
-                    rm -r /opt/homebrew/Cellar/tomcat/11.0.6/libexec/webapps/Project-4/* && \
-                    cp -r ~/Downloads/CNT4714/proj4/proj4/* /opt/homebrew/Cellar/tomcat/11.0.6/libexec/webapps/Project-4/ && \
-                    cd ~/Downloads/CNT4714/proj4/src/proj4/ && \
-                    mvn compile && \
-                    cd - && \
-                    cp -r ~/Downloads/CNT4714/proj4/src/proj4/target/classes /opt/homebrew/Cellar/tomcat/11.0.6/libexec/webapps/Project-4/WEB-INF && \
-                    /opt/homebrew/Cellar/tomcat/11.0.6/libexec/bin/startup.sh"
